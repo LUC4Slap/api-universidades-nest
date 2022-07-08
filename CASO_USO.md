@@ -2,9 +2,9 @@ CASOS DE USO: Busca de universidade
 
 ATOR PRINCIPAL: Integrado
 
-PRE CONDIÇÕES: Acessar o api de universidades para popular banco
+PRE CONDIÇÕES: Ter acesso a api de universidades
 
-POS CONDIÇOES: Deve ser salvo somente univesidades de alguns paises :
+POS CONDIÇOES: Deve estar salvo somente univesidades de alguns paises:
 [
 "argentina",
 "brasil",
@@ -17,10 +17,14 @@ POS CONDIÇOES: Deve ser salvo somente univesidades de alguns paises :
 ]
 
 CENARIO PRINCIPAL:
+0 - Criar lista de paises
+0.1 - Percorrer lista de paises
 1- Conectar na api
 2- Fazer busca de universidade de cada pais
-3- Salvar cada universidade em um array
-4- Pecorrer array da universidades
+3- Salvar pais que deu erro em um array
+3.1- Pecorrer array com paises que deu erro
+4- Salvar universidade que deu erro em um array
+4.1- Pecorrer array da universidades - sair
 5- Conectar com banco de dados
 6- Salvar universidade e exibir message "Univeridade X salva no banco"
 
