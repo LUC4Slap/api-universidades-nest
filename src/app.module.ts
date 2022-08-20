@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ModuleModule } from './universidades/module/module.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -8,6 +9,7 @@ import { ModuleModule } from './universidades/module/module.module';
       useNewUrlParser: true,
     }),
     ModuleModule,
+    UsersModule,
   ],
   controllers: [],
   providers: [],
