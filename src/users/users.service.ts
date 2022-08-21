@@ -72,7 +72,7 @@ export class UsersService {
     }
     await this.UsersModule.deleteOne({ email }).exec();
     return {
-      message: `Usuario ${userExist.name} com E-mail ${email} excluido`,
+      message: `Usuario ${userExist.name} com E-mail ${email} excluido com sucesso`,
     };
   }
 }
