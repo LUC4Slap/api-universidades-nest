@@ -57,4 +57,22 @@ export class UsersService {
     }
     return userExist;
   }
+
+  async deletUser(email: string): Promise<any> {
+    if (email == null || email == undefined) {
+      throw new NotFoundException(
+        `É obrigatorio passar um email para esta rota`,
+      );
+    }
+    const userExist = await this.UsersModule.findOne({ email }).exec();
+    if (!userExist) {
+      throw new NotFoundException(
+        `Usuario com E-mail: ${email} não encontrado`,
+      );
+    }
+    await this.UsersModule.deleteOne({ email }).exec();
+    return {
+      message: `Usuario ${userExist.name} com E-mail ${email} excluido`,
+    };
+  }
 }
